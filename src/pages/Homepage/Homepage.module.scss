@@ -1,0 +1,64 @@
+@media (max-width: 600px) {
+.featuredProds {
+    margin:2% 0;
+
+    h2{
+        font-size: 1.58em;
+    } 
+
+    &__range{
+        display: flex;
+        flex-direction: column;
+    }
+    &__single{
+        margin-bottom: 5%;
+    }
+
+    &__caption{
+    font-weight: bold;
+    font-size: 20px;
+    margin:0 2%;
+    }
+    img{
+        width: 180px;
+        margin-bottom: -1%;
+    }
+    a {
+    margin-top: 2%;
+    font-size: 5px;
+    }
+    .allProds__link{
+        margin-top: 50px;
+    }
+  }
+}
+
+@media (min-width: 600px) {
+.featuredProds{
+    margin:2% 0;
+
+    h2{
+        font-size: 35px;
+    }
+
+    &__range{
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__caption{
+    font-weight: bold;
+    font-size: 25px;
+    margin:0 2%;
+    }
+    img{
+     width: 200px;
+    }
+    .allProds__link {
+    margin-top: 5%;
+    font-size: 28px;
+    }
+
+  }
+}
+
