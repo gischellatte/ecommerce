@@ -37,7 +37,7 @@ function App() {
         
       </Routes>
   </BrowserRouter>
-   <footer>Copyright 2026</footer>
+  <footer>Copyright 2026</footer>
     </>
   )
 

@@ -6,7 +6,7 @@ import classes from './Carousel.module.scss';
 
 const Carousel = () => {  
 
- const[featuredProducts, setFeaturedProducts]=useState(null);
+ const[featuredProducts, setFeaturedProducts] = useState(null);
  const [fetchStatus, setFetchStatus] = useState('PENDING');
  const [currentSlideIndex, setCurrentSlideIndex]=useState(0);
  const [currentSlide2ndIndex, setCurrentSlide2ndIndex]=useState(3);
@@ -64,7 +64,7 @@ const Carousel = () => {
 
       <button onClick={proceedToNextSlide}>
 
-        <p className={classes.carousel__nextButton} >
+        <p className={classes.carousel__nextButton}>
 
         </p>
         
