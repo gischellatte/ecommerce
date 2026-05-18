@@ -41,7 +41,7 @@ export default function ProductsListPage() {
   const handleQuantityChange = (productId, newCount) => {
     setQuantities(prev => ({
       ...prev,
-      [productId]: Math.max(0, newCount), // Preventing negative values
+      [productId]: Math.max(0, newCount), // Blocks negative values
     }));
   };
 
