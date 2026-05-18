@@ -5,14 +5,12 @@ import classes from '../pages/ProductsListPage/ProductsListPage.module.scss'
 export default function QuantityCounter( {counter, onChange} ){
 
   const increaseQuant = () => {
-   // if (count >= stockNo) return;
-   // setCount(count + 1);
+
     onChange(counter + 1);
     
   }
    const decreaseQuant = () => {
-   // if (count <= 0 ) return;
-   // setCount(count - 1);
+
     onChange(counter - 1);
   }
 
