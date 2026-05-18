@@ -1,7 +1,6 @@
-import { useLocation, useNavigate } from 'react-router'; //useLocation is a feature of the React Router library, used in JavaScript/React applications to access information about the current URL and navigation state
+import { useLocation, useNavigate } from 'react-router'; 
 import classes from '../PaymentPage/PaymentPage.module.scss'
 import { CheckoutProvider } from '@stripe/react-stripe-js/checkout'; 
-//import CheckoutForm from '../../components/CheckoutForm';
 import { loadStripe } from '@stripe/stripe-js';
 const stripePromise = loadStripe('pk_test_51Srcj0K8aCQiHv31EzQkn1IBisSbxs8r0j6zzf8dxoOrK3wtYGCd4cdvIUowj7kTGTtPvmDx4MPbVDl0wQfQvdIC00dx04aAWP');
 
@@ -20,7 +19,7 @@ export default function PaymentPage() {
   });
 
   const payNow =()=>{
-    navigate('/ThankYouPage')//if the payment succeeds, take customer to the thank you page
+    navigate('/ThankYouPage')
   }
 
   return (
@@ -36,7 +35,7 @@ export default function PaymentPage() {
 
       
     quantity> 0 && (
-        // Contains  details of the selected products, quantities, and subtotals of each item (e.g. 3 oreo almonds for $15)
+        // Provide details of the selected products, quantities, and subtotals of each item (e.g. 3 oreo almonds for $15)
       <div key={eachProduct.id}>
         <img src={eachProduct.imageUrl} alt={eachProduct.name}/>
         <p>{eachProduct.name.charAt(0).toUpperCase() + eachProduct.name.slice(1)} - {eachProduct.flavour} (Qty: {quantity})</p>
