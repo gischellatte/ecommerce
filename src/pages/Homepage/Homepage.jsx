@@ -16,7 +16,7 @@ const Home = () => {
    setFetchStatus('LOADING');
 
   retrieveFeaturedProducts()
-    .then((featured) => { //the data in 'featured' comes from retrieveFeaturedProducts()
+    .then((featured) => {
       setFeaturedProducts(featured);
       setFetchStatus('SUCCESS');
       console.log("Featuring: "+featuredProducts);
