@@ -26,7 +26,6 @@ const Carousel = () => {
   }, []);
 
   const backToPrevSlide = () =>{
-    //(prevSlideIndex = 0. If there are 5 items, (0-1+5) % 5)
     setCurrentSlideIndex((prevSlideIndex)=>(prevSlideIndex-1+ featuredProducts.length)%featuredProducts.length)
     console.log(featuredProducts);
     setCurrentSlide2ndIndex((prevSlideIndex)=>(prevSlideIndex-1+ featuredProducts.length)%featuredProducts.length)
