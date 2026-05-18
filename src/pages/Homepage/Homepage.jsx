@@ -45,17 +45,6 @@ const Home = () => {
   return (
     <>
       <div>
-         {/* Makes the new arrivals appear multiple times
-         fetchStatus === 'SUCCESS' && <Carousel/> && featuredProducts.map((featProduct)=>( 
-            
-            <div key={featProduct.id}>    
-                <img src={featProduct.imageUrl} style={{width: 200}}/>
-            </div>    
-            ))
-          fetchStatus === 'SUCCESS' */
-        }
-      </div>
-      <div>
          {
           fetchStatus === 'SUCCESS' && <Carousel/>
         }
@@ -63,7 +52,6 @@ const Home = () => {
       <div  className={classes.featuredProds}>
         <h2>A Sneakpeek to our products</h2>
          {
-          //must add everyProducts so it does not return null (because there are 2 useEffects here). 
           fetchStatus === 'SUCCESS' && everyProducts && 
           
           <div className={classes.featuredProds__range}>{everyProducts.slice(0, 5).map((singleProduct) => (
