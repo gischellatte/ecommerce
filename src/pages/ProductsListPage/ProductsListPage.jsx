@@ -25,7 +25,7 @@ export default function ProductsListPage() {
   }, []);
 
   const doPayment =()=>{
-    //const redirectToPay = useNavigate();
+
     navigate('/PaymentPage', {state:{quantities, totalPrice, allProduct}})//pass data to the payment page
   }
 
