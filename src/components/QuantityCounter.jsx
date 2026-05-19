@@ -2,10 +2,11 @@ import { useState } from 'react';
 import classes from '../pages/ProductsListPage/ProductsListPage.module.scss'
 
 
-export default function QuantityCounter( {counter, onChange} ){
+export default function QuantityCounter( {counter, onChange, stockNo} ){
 
   const increaseQuant = () => {
-
+   if (counter >= stockNo) return;
+   //setCount(count + 1);
     onChange(counter + 1);
     
   }
@@ -22,7 +23,7 @@ return (
     </button>
     {counter}
     
-    <button onClick={increaseQuant} className={classes.button__increaseQuant}>
+    <button onClick={increaseQuant} disabled={counter>= stockNo} className={classes.button__increaseQuant}>
         +
     </button>
    

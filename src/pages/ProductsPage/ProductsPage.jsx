@@ -8,7 +8,7 @@ import classes from '../ProductsPage/ProductsPage.module.scss';
 export default function ProductsPage() {
   const [product, setProduct] = useState(null);
   const [fetchStatus, setFetchStatus] = useState('PENDING');
-  const [counter, setCounter] = useState(0); // This will hold the selected quantity
+  const [counter, setCounter] = useState(0); // Holds the selected quantity
   const [subTotal, setSubTotal] = useState(0); 
   const [allTotal, setAllTotal] = useState(0); 
   const [quantities, setQuantities] = useState({});//hold quantities for multiple products 
@@ -45,7 +45,6 @@ export default function ProductsPage() {
   
 
   const doPayment =()=>{
-    //const redirectToPay = useNavigate();
     const paymentState ={
       quantities, totalPrice: allTotal, allProduct
     }

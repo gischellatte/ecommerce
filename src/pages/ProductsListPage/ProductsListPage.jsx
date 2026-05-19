@@ -25,8 +25,7 @@ export default function ProductsListPage() {
   }, []);
 
   const doPayment =()=>{
-
-    navigate('/PaymentPage', {state:{quantities, totalPrice, allProduct}})//pass data to the payment page
+    navigate('/PaymentPage', {state:{quantities, totalPrice, allProduct}}) //pass data to the payment page
   }
 
   // Calculate the total price whenever quantities change
@@ -39,10 +38,24 @@ export default function ProductsListPage() {
 
   // Handle quantity changes for each product
   const handleQuantityChange = (productId, newCount) => {
+
+
+  const selectedProduct = allProduct.find(
+    (product) => product.id === productId
+  );
+
+  if (!selectedProduct) return;
+
+  const limitedQuantity = Math.min(
+    selectedProduct.stock,
+    Math.max(0, newCount)
+  );
     setQuantities(prev => ({
       ...prev,
-      [productId]: Math.max(0, newCount), // Blocks negative values
+      [productId]: Math.max(0, newCount), // Preventing negative values
     }));
+    
+
   };
 
   const groupedProducts=fetchStatus === 'SUCCESS' ? allProduct.reduce((acc, oneProd)=>{
@@ -57,7 +70,9 @@ export default function ProductsListPage() {
 
   return (
     <>
+
   <div>
+
     {fetchStatus === 'SUCCESS' && 
     Object.keys(groupedProducts).map(category=>(
       <div key={category} className={classes.productList}>
@@ -77,9 +92,11 @@ export default function ProductsListPage() {
           </div>
           
           {/* Pass the respective quantity */}
+          
           <QuantityCounter
-            counter={quantities[singleProduct.id] || 0}
-            onChange={(newCount) => handleQuantityChange(singleProduct.id, newCount)}         
+            counter={quantities[singleProduct.id] || 0} maxStock={singleProduct.stock} stockNo={singleProduct.stock}
+            onChange={(newCount) => handleQuantityChange(singleProduct.id, newCount) 
+            }         
           />
           </div>
           ))

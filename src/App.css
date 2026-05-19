@@ -41,9 +41,13 @@
   color: #888;
 }
 
-footer{
-  position: absolute;
-    bottom: 5%;
-    left: 40%;
-    right: 40%;
+
+div footer{
+  
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    margin-top: 5%;
+
 }
