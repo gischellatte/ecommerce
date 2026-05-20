@@ -7,7 +7,7 @@ const stripePromise = loadStripe('pk_test_51Srcj0K8aCQiHv31EzQkn1IBisSbxs8r0j6zz
 export default function PaymentPage() {
  const location = useLocation();
  const navigate= useNavigate();
- const { quantities, totalPrice, allProduct } = location.state || {};  // Destructure state
+ const { quantities, totalPrice, allProduct } = location.state || {};  
 
  let products=allProduct ? allProduct.map(eachProduct=>eachProduct):[];
  let product = quantities;
@@ -15,7 +15,7 @@ export default function PaymentPage() {
  fetch('/create-checkout-session', { method: 'POST' })
   .then((response) => response.json())
   .then((session) => {
-    window.location.href = session.url; // Redirect to Stripe hosted checkout
+    window.location.href = session.url; 
   });
 
   const payNow =()=>{
@@ -35,7 +35,6 @@ export default function PaymentPage() {
 
       
     quantity> 0 && (
-        // Provide details of the selected products, quantities, and subtotals of each item (e.g. 3 oreo almonds for $15)
       <div key={eachProduct.id}>
         <img src={eachProduct.imageUrl} alt={eachProduct.name}/>
         <p>{eachProduct.name.charAt(0).toUpperCase() + eachProduct.name.slice(1)} - {eachProduct.flavour} (Qty: {quantity})</p>
