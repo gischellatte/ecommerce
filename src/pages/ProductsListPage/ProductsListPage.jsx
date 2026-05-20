@@ -25,10 +25,10 @@ export default function ProductsListPage() {
   }, []);
 
   const doPayment =()=>{
-    navigate('/PaymentPage', {state:{quantities, totalPrice, allProduct}}) //pass data to the payment page
+    navigate('/PaymentPage', {state:{quantities, totalPrice, allProduct}})
   }
 
-  // Calculate the total price whenever quantities change
+  // Calculate the total price when quantities change
   const totalPrice = fetchStatus === 'SUCCESS'
     ? allProduct.reduce((sum, product) => {
         const qty = quantities[product.id] || 0;
@@ -52,7 +52,7 @@ export default function ProductsListPage() {
   );
     setQuantities(prev => ({
       ...prev,
-      [productId]: Math.max(0, newCount), // Preventing negative values
+      [productId]: Math.max(0, newCount), 
     }));
     
 
@@ -91,7 +91,7 @@ export default function ProductsListPage() {
               </Link>
           </div>
           
-          {/* Pass the respective quantity */}
+     
           
           <QuantityCounter
             counter={quantities[singleProduct.id] || 0} maxStock={singleProduct.stock} stockNo={singleProduct.stock}
