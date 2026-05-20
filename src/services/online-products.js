@@ -26,7 +26,7 @@ export const retrieveAllProducts = async () => {
     for (const pc of prodCategories){ 
     const allProdsRef = collection(db, 'ecommerce-products', 'onlineCatalogue', pc);
     const productsDocs = await getDocs(allProdsRef);
-    const prods =  productsDocs.docs.map((doc) => ({ id: doc.id, ...doc.data(), category:pc })); //we need to add the id because it does not contain ID
+    const prods =  productsDocs.docs.map((doc) => ({ id: doc.id, ...doc.data(), category:pc }));
    
     fullProducts =[...fullProducts, ...prods];
    
