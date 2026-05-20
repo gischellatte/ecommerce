@@ -4,7 +4,7 @@ import { describe, expect, vi, it } from 'vitest';
 import {retrieveFeaturedProducts} from '../services/online-products' 
 import Carousel from './Carousel'
 
-// Mocks the module
+
  vi.mock('../services/online-products', ()=>({
            retrieveFeaturedProducts: vi.fn()
         }));
