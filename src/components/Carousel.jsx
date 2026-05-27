@@ -48,14 +48,14 @@ const Carousel = () => {
         
       </button>
 
-      <div className="carousel-content">
+      <div className={classes.carousel__content}>
        <a href='/ProductsPage/yakgwa/yakgwa-original'>
-        <img
-          src={featuredProducts[currentSlideIndex].imageUrl}  style={{width: 200}}
+        <img className={classes.carousel__image}
+          src={featuredProducts[currentSlideIndex].imageUrl}
         />
         </a>  
-        <img
-          src={featuredProducts[currentSlide2ndIndex].imageUrl}  style={{width: 200}}
+        <img className={classes.carousel__image}
+          src={featuredProducts[currentSlide2ndIndex].imageUrl}
         />
         
        

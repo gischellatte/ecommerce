@@ -6,7 +6,7 @@ export default function QuantityCounter( {counter, onChange, stockNo} ){
 
   const increaseQuant = () => {
    if (counter >= stockNo) return;
-   //setCount(count + 1);
+
     onChange(counter + 1);
     
   }
